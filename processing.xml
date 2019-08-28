@@ -1,0 +1,57 @@
+<graph id="Graph">
+  <version>1.0</version>
+  <node id="Read">
+    <operator>Read</operator>
+    <sources/>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement"/>
+  </node>
+  <node id="Reproject">
+    <operator>Reproject</operator>
+    <sources>
+      <sourceProduct refid="Read"/>
+    </sources>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
+      <wktFile/>
+      <crs>EPSG:4326</crs>
+      <resampling>Nearest</resampling>
+      <referencePixelX/>
+      <referencePixelY/>
+      <easting/>
+      <northing/>
+      <orientation/>
+      <pixelSizeX/>
+      <pixelSizeY/>
+      <width/>
+      <height/>
+      <tileSizeX/>
+      <tileSizeY/>
+      <orthorectify>false</orthorectify>
+      <elevationModelName/>
+      <noDataValue>NaN</noDataValue>
+      <includeTiePointGrids>true</includeTiePointGrids>
+      <addDeltaBands>false</addDeltaBands>
+    </parameters>
+  </node>
+  <node id="Write">
+    <operator>Write</operator>
+    <sources>
+      <sourceProduct refid="Reproject"/>
+    </sources>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
+      <file>C:\Users\shumi\OneDrive\Documents\IKD\ceur\LST\LST\target.tif</file>
+      <formatName>GeoTIFF</formatName>
+    </parameters>
+  </node>
+  <applicationData id="Presentation">
+    <Description/>
+    <node id="Read">
+            <displayPosition x="37.0" y="134.0"/>
+    </node>
+    <node id="Reproject">
+      <displayPosition x="221.0" y="155.0"/>
+    </node>
+    <node id="Write">
+            <displayPosition x="455.0" y="135.0"/>
+    </node>
+  </applicationData>
+</graph>
